@@ -15,9 +15,8 @@ Welcome to Day 1 of the **100 Days of AI** challenge!
 - [x] Initialized Python virtual environment using:
   ```bash
   python -m venv .venv
-'''
 
-'''
+
 # Day 01 – Basic Calculator
 
 This is a simple calculator built using Python functions.
@@ -27,5 +26,3 @@ It supports basic addition for now.
 
 ```bash
 python calculator.py
-
-'''
