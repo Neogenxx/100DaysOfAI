@@ -12,6 +12,14 @@ This is a simple Python-based Sentiment Analyzer built using the `TextBlob` libr
 
 ---
 
+🛠️ How to Use:
+To install all dependencies at once, run in your terminal (after activating your virtual environment):
+
+```bash
+pip install -r requirements.txt
+
+---
+
 ## 🚀 How It Works
 
 1. User inputs a sentence.
