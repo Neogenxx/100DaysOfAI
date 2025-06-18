@@ -22,7 +22,7 @@ def get_headlines(url):
 # Step 2: Analyze sentiment
 def analyze_sentiment(text):
     blob = TextBlob(text)
-    polarity = blob.sentiment.polarity
+    polarity = blob.sentiment.polarity 
     if polarity > 0:
         return "Positive"
     elif polarity < 0:
