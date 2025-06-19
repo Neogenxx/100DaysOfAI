@@ -44,7 +44,7 @@ root.title("Text Summarizer - GUI Edition")
 root.geometry("800x600")
 
 frame = tk.Frame(root)
-frame.pack(pady=10)
+frame.pack(pady=20)
 
 load_btn = tk.Button(frame, text="Load .txt File", command=load_text_from_file)
 load_btn.pack(side=tk.LEFT, padx=10)
