@@ -58,7 +58,7 @@ pip install sumy
 3. **Run the application**:
 
 ```bash
-python text_summarizer_gui.py
+python summarizer.py
 ```
 
 ---
