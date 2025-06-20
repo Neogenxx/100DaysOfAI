@@ -25,13 +25,26 @@ This app helps you quickly summarize large PDF documents by:
 
 ---
 
-## ⚙️ Key Functions
+## 🧠 Key Functions
 
-```python
-extract_text_from_pdf(file_path)
-summarize_text(text, sentence_count=5)
-open_file()  # Loads the PDF, summarizes, displays
-```
+### `summarize_text(text, sentence_count=5)`
+
+* Uses `sumy` PlaintextParser and LsaSummarizer to process the text.
+* Returns the summary as a string.
+
+### `open_file()`
+
+* Opens a `.pdf` file dialog.
+* Extracts text from the selected PDF using extract_text_from_pdf()
+* If text is found, it summarizes it using summarize_text()
+
+### `extract_text_from_pdf(file_path)`
+
+* Opens the PDF using pdfplumber.
+* Extracts text from each page using .extract_text().
+* Concatenates all text and returns it as a single string.
+
+
 
 ---
 
@@ -75,6 +88,6 @@ python pdfsummarizer.py
 * Works best on PDFs with selectable/extractable text.
 * For scanned image PDFs, consider integrating OCR with `pytesseract`.
 
-```
+---
 
 

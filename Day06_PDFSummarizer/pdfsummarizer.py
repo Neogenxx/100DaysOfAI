@@ -35,7 +35,7 @@ def open_file():
 # GUI Setup
 app = Tk()
 app.title("PDF Summarizer")
-app.geometry("700x500")
+app.geometry("700x600")
 
 Label(app, text="Summarized Output", font=("Arial", 16)).pack()
 text_box = scrolledtext.ScrolledText(app, wrap="word", font=("Arial", 12))
