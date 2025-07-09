@@ -2,7 +2,9 @@ from textblob import TextBlob
 
 def analyze_sentiment(text):
     blob = TextBlob(text)
+    print(blob)
     polarity = blob.sentiment.polarity
+    print(polarity)
     print(blob.sentiment)
 
     if polarity > 0:
