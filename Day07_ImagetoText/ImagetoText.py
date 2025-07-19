@@ -1,0 +1,26 @@
+import cv2
+import pytesseract
+from PIL import Image
+
+# Optional: Specify tesseract path if needed
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
+def preprocess_image(image_path):
+    img = cv2.imread(image_path)
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    _, thresh = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY)
+    return thresh
+
+def extract_text(image):
+    return pytesseract.image_to_string(image)
+
+def save_text_to_file(text, filename="output.txt"):
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(text)
+
+if __name__ == "__main__":
+    path =  r"D:\Z\100DaysofAI\Day07_ImagetoText\sample_image.png"
+    processed_img = preprocess_image(path)
+    text = extract_text(processed_img)
+    save_text_to_file(text)
+    print("Text Extracted:\n", text)
