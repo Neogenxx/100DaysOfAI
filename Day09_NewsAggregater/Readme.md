@@ -1,52 +1,63 @@
-# 🗞️ Day 9 – News Aggregator (100 Days of AI)
+### 📅 Day 9: News Aggregator using NewsAPI
 
-📌 Project Overview
-This project fetches live news headlines from the internet using the NewsAPI and displays them in a clean, readable format. It allows users to specify search keywords (like "AI", "technology", "sports") and returns top headlines in real-time.
+This project fetches live news articles from NewsAPI based on user-defined search terms, and displays them in a clean terminal interface. It demonstrates working with public APIs, secure key storage using `.env`, and user input handling.
 
-### 🧰 Libraries Used
+---
 
-```
-Library	Purpose
-requests	To send HTTP requests to NewsAPI
-json	To parse and process the JSON responses
-os	To read environment variables
-dotenv	To securely load the API key from .env
-```
+### 📦 Libraries Used
+
+| Library         | Purpose                                              |
+|-----------------|------------------------------------------------------|
+| `requests`      | To send GET requests to the NewsAPI                 |
+| `os`            | To access environment variables                     |
+| `dotenv`        | To load API key securely from a `.env` file         |
+
+---
+
 ### 🧠 Key Functions
-get_news(api_key, query='AI', language='en', page_size=5)
-Fetches top headlines from NewsAPI based on a search query, language, and page size.
 
-display_news(news_list)
-Takes a list of news article dictionaries and prints their titles and sources in a user-friendly format.
+#### `get_news(api_key, query="AI", language="en", page_size=5)`
 
-### ▶️ How to Run
-Step 1: Install Dependencies
-```
+* Sends a GET request to NewsAPI with the given query parameters.
+* Returns a list of news articles as dictionaries.
+* Handles HTTP status errors gracefully.
+
+#### `display_news(articles)`
+
+* Displays the headline and source for each news article.
+* Handles empty result sets with a fallback message.
+
+---
+
+### 🖼 Output
+
+* **Terminal Output**:  
+  Lists top news headlines with their source in this format:
+
+### 🚀 How to Run
+
+1. **Install dependencies:**
+
+```bash
 pip install requests python-dotenv
 ```
-Step 2: Setup .env File
+2. **Set up the .env file:**
+
+   Create a file named .env in the project folder with:
 ```
-NEWS_API_KEY=your_actual_newsapi_key
+NEWS_API_KEY=your_api_key_here
 ```
-Step 3: Run the Script
+3. **Run the script:**
 ```
-python day09_news_aggregator.py
+python news_aggregator.py
 ```
 
+### 🔐 How to Get a NewsAPI Key
 
-### 🔐 Security Tips
+- Visit https://newsapi.org/
 
-Keep your API key private.
+- Sign up for a free account
 
-Do not upload your .env file to GitHub.
+- Copy your API key from the dashboard
 
-Use .gitignore to exclude .env from version control.
-
-🚀 Optional Enhancements
-GUI version using Tkinter or PyQt
-
-Add category filters (e.g., technology, sports)
-
-Integrate with a Text-to-Speech engine (combine with Day 8)
-
-Schedule periodic updates with schedule or cron
+- Paste it into your .env file as shown above
