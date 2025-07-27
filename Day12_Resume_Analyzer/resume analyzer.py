@@ -2,8 +2,12 @@ import os
 import re
 import docx2txt
 import PyPDF2
+import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+
+nltk.download('stopwords')
+nltk.download('punkt')
 
 # Predefined keywords to match in resume
 KEYWORDS = {
